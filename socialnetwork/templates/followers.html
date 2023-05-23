@@ -1,0 +1,61 @@
+<html>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'followers.css'%}">
+        <script src="{% static 'js/functions.js' %}"></script>
+    </head>
+
+    <body>
+        
+        <div id="id_header_div">
+            <div id="id_nav_profile">
+                <a href="{% url 'myprofile' user.profile.user_id %}">{{first_name}} {{last_name}}</a>
+            </div>
+            <h1 id="id_site_name">Blog Master</h1>
+            <div id="links">
+                <a id='id_nav_global_stream' href="{% url 'global' %}">Global</a>&nbsp;&nbsp;
+                <a id='id_nav_follower_stream' href="{% url 'followers' %}">Follower</a>&nbsp;&nbsp;
+                <a id='id_nav_logout' href="{% url 'logout' %}">Logout</a>
+            </div>
+        </div>
+
+        <div id="id_page_name">
+            {{page_name}}
+        </div>
+
+        <!-- {% comment %} {% for post in posts %}
+            {% csrf_token %}
+            <div id="post_text">
+                <p>Post by <i><a href="{% url 'otherprofile' post.user.profile.user_id %}">{{post.user.first_name}} {{post.user.last_name}}</a></i> - {{post.new_post}} - <i>{{post.date}}</i></p>
+            </div>
+            &nbsp
+
+        {% endfor %} {% endcomment %} -->
+
+        <!-- HTML for AJAX -->
+        
+        <div id="my-follower-posts-go-here">
+
+        </div>
+
+    </body>
+
+
+
+</html>
+
+<script>
+
+    console.log("logging from inline AJAX follower")
+    
+    const myUserName = "{{ request.user.username }}"
+
+    const addCommentURL = "{% url 'add-comment' %}"
+
+    window.onload = getFollowerPosts
+
+    window.setInterval(getFollowerPosts, 5000)
+
+</script>
+
+

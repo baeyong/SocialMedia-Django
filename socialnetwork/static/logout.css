@@ -1,0 +1,43 @@
+#id_header_div {
+    background-color: lightblue;
+    height: 120px;
+}
+
+#id_header_div a {
+    margin-left: 80%;
+
+}
+
+#id_site_name {
+    padding-top: 35px;
+    padding-left: 30px;
+}
+
+body {
+    margin: 0;
+}
+
+#id_page_name {
+    padding-top: 10px;
+    text-align: center;
+    font-size: larger;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#id_login {
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* #id_login_button {
+    text-align: center;
+    font: bold 15px Arial;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: #333333;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+} */

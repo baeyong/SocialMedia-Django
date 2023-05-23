@@ -1,0 +1,42 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'otherProfile.css'%}">
+
+<div id="id_header_div">
+    <div id="id_nav_profile">
+        <a href="{% url 'myprofile' user.profile.user_id %}">{{first_name}} {{last_name}}</a>
+    </div>
+    <h1 id="id_site_name">Blog Master</h1>
+    <div id="links">
+        <a id='id_nav_global_stream' href="{% url 'global' %}">Global</a>&nbsp;&nbsp;
+        <a id='id_nav_follower_stream' href="{% url 'followers' %}">Follower</a>&nbsp;&nbsp;
+        <a id='id_nav_logout' href="{% url 'logout' %}">Logout</a>
+    </div>
+</div>
+
+<div id="id_page_name">
+    Profile Page for {{profile.user.first_name}} {{profile.user.last_name}}
+</div>
+
+{% if profile.profile_picture %}
+{% load static %}
+<img id="id_user_picture" src="{% url 'picture' profile.user_id %}" alt='Not working'>
+{% else %}
+{% load static%}
+<img id="id_user_picture" src="{% static 'images/Profile-Icon.png'%}"> 
+{% endif %}
+
+<div id="user_bio">
+    <textarea id="id_user_bio">{{profile.user.profile.bio}}</textarea>
+    <br><br>
+    
+    {% if button_name and button_name == 'Follow' %}
+    {% csrf_token %}
+        <a id="id_follow" href="{% url 'follow' profile.user_id %}">{{button_name}}</a>
+    {% endif %}
+    
+    {% if button_name and button_name == 'Unfollow' %}
+    {% csrf_token %}
+        <a id="id_follow" href="{% url 'unfollow' profile.user_id %}">{{button_name}}</a>
+    {% endif %}
+
+</div>    

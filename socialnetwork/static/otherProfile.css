@@ -1,0 +1,64 @@
+#id_header_div {
+    background-color: lightblue;
+    height: 120px;
+}
+
+#id_nav_profile {
+    text-align: right;
+    padding-right: 20px;
+}
+
+#id_site_name {
+    padding-left: 30px;
+}
+
+#links {
+    text-align: right;
+    padding-right: 20px;
+}
+
+body {
+    margin: 0;
+}
+
+#id_page_name {
+    padding-top: 10px;
+    text-align: center;
+    font-size: larger;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#id_user_picture {
+    height: 150px;
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+#id_user_bio {
+    height: 70px;
+    width: 300px;
+    resize: none;
+    text-align: left;
+    pointer-events: none;
+}
+
+#id_follow {
+    text-align: center;
+    font: bold 15px Arial;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: #333333;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+}
+
+#user_bio {
+    text-align: center;
+}

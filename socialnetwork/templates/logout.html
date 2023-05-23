@@ -1,0 +1,16 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'logout.css'%}">
+
+<div id="id_header_div">
+    <h1 id="id_site_name">Blog Master</h1>
+    <a href="{% url 'register' %}" id="id_register_link">Register</a>
+</div>
+
+<div id="id_page_name">
+    Login again?
+</div>
+
+<div id="id_login">
+    <a id='id_login_button' href="{% url 'login' %}">Login</a>
+</div>
+

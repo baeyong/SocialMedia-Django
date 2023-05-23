@@ -1,0 +1,32 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'register.css'%}">
+
+<div id="id_header_div">
+    <h1 id="id_site_name">Blog Master</h1>
+    <a href="{% url 'login' %}">Login</a>
+</div>
+
+<div id="id_page_name">
+    {{page_name}}
+</div>
+
+<div id="form">
+    <form method='POST'action="">
+        {% csrf_token %}
+
+        {% for field in form %}
+        <div>
+            <p>{{field.label}}: <br> {{field}} </p>
+
+            {% for error in field.errors %}
+                <small style="color: red">{{error}}</small>
+
+            {% endfor %}
+        </div>
+        {% endfor %}
+
+        <button type="Submit">Register</button>
+    </form>
+</div>
+
+

@@ -1,0 +1,33 @@
+#id_header_div {
+    background-color: lightblue;
+    height: 120px;
+}
+
+#id_header_div a {
+    margin-left: 80%;
+
+}
+
+#id_site_name {
+    padding-top: 35px;
+    padding-left: 30px;
+}
+
+body {
+    margin: 0;
+}
+
+#id_page_name {
+    padding-top: 10px;
+    text-align: center;
+    font-size: larger;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#form {
+    padding-top: 10px;
+    margin-left:45%;
+}
+
+
+

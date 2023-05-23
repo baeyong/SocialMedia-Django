@@ -1,0 +1,23 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'login.css'%}">
+
+<div id="id_header_div">
+    <h1 id="id_site_name">Blog Master</h1>
+    <a href="{% url 'register' %}" id="id_register_link">Register</a>
+</div>
+
+<div id="id_page_name">
+    Login
+</div>
+
+<div id="form">
+    <form method='post'action="">
+        {% csrf_token %}
+        
+        {% for field in form %}
+            <p>{{field.label}}: <br> {{field}} </p>
+        {% endfor %}
+        <button type="Submit" id="id_login_button">Submit</button>
+    </form>
+</div>
+

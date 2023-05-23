@@ -1,0 +1,49 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'myProfile.css'%}">
+
+<div id="id_header_div">
+    <div id="id_nav_profile">
+        <a href="{% url 'myprofile' user.profile.user_id %}">{{first_name}} {{last_name}}</a>
+    </div>
+    <h1 id="id_site_name">Blog Master</h1>
+    <div id="links">
+        <a id='id_nav_global_stream' href="{% url 'global' %}">Global</a>&nbsp;&nbsp;
+        <a id='id_nav_follower_stream' href="{% url 'followers' %}">Follower</a>&nbsp;&nbsp;
+        <a id='id_nav_logout' href="{% url 'logout' %}">Logout</a>
+    </div>
+</div>
+
+<div id="id_page_name">
+    Profile Page for {{first_name}} {{last_name}}
+</div>
+
+{% if profile.profile_picture %}
+{% load static %}
+<img id="id_user_picture" src="{% url 'picture' profile.user_id %}" alt='Not working'>
+{% else %}
+{% load static%}
+<img id="id_user_picture" src="{% static 'images/Profile-Icon.png'%}"> 
+{% endif %}
+ 
+
+<form id="update_profile" action="{% url 'myprofile' profile.user_id %}" method="POST" enctype='multipart/form-data'>
+
+    {% csrf_token %}
+    <div id="form">
+        {{form.as_p}}
+        <input id="id_update_profile_button" type="submit">
+    </div>
+
+</form>
+
+
+<div id="following">
+    <p>You are following:</p>
+    <ul>
+        {% for u in profile.following.all %}
+        <li>
+            <a href="{% url 'otherprofile' u.id %}">{{u.first_name}} {{u.last_name}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
