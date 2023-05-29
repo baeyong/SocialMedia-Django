@@ -131,3 +131,5 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_REDIRECT_URL = 'global'
+
+STATIC_ROOT = BASE_DIR / 'collected_static'
