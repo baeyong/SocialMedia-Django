@@ -83,11 +83,11 @@ def globalStream(request):
 
     #     return render(request, 'global.html', context)
 
-    # if 'post_input_text' not in request.POST or not request.POST['post_input_text']:
-    #     context['posts'] = Post.objects.all().order_by('-date')
-    #     context['form'] = PostForm()
+    if 'post_input_text' not in request.POST or not request.POST['post_input_text']:
+        # context['posts'] = Post.objects.all().order_by('-date')
+        # context['form'] = PostForm()
 
-    #     return render(request, 'global.html', context)
+        return render(request, 'global.html', context)
 
     
     new_form = PostForm(request.POST)
