@@ -96,7 +96,6 @@ def globalStream(request):
     if new_form.is_valid():
 
         new_post = Post(new_post=new_form.cleaned_data['post_input_text'], user=request.user, date = timezone.now())
-        print('time on post is' + new_post.date)
         new_post.save()
 
     # context['posts'] = Post.objects.all().order_by('-date')
