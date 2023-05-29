@@ -133,3 +133,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 LOGIN_REDIRECT_URL = 'global'
 
 STATIC_ROOT = BASE_DIR / 'collected_static'
+
+SECURE_CROSS_ORIGIN_OPENER_POLICY = None
