@@ -90,13 +90,13 @@ def globalStream(request):
     #     return render(request, 'global.html', context)
 
     
-    # new_form = PostForm(request.POST)
-    # context['form'] = new_form
+    new_form = PostForm(request.POST)
+    context['form'] = new_form
     
-    # if new_form.is_valid():
+    if new_form.is_valid():
 
-    #     new_post = Post(new_post=new_form.cleaned_data['post_input_text'], user=request.user, date = timezone.now())
-    #     new_post.save()
+        new_post = Post(new_post=new_form.cleaned_data['post_input_text'], user=request.user, date = timezone.now())
+        new_post.save()
 
     # context['posts'] = Post.objects.all().order_by('-date')
 
