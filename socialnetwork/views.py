@@ -106,11 +106,6 @@ def globalStream(request):
 def globalStream_json_serializer(request):
     response_data = {'posts':[], 'comments':[]}
 
-    default_timezone = timezone.get_default_timezone()
-    est_time = timezone.localtime(model_item.date - datetime.timedelta(days=1), timezone=default_timezone)
-    est_time_str = est_time.strftime("%-m/%-d/%Y %-I:%M %p")
-
-
     for model_item in Post.objects.all():
 
         my_item = {
