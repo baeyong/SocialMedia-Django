@@ -95,7 +95,7 @@ def globalStream(request):
     
     if new_form.is_valid():
 
-        new_post = Post(new_post=new_form.cleaned_data['post_input_text'], user=request.user, date = timezone.now())
+        new_post = Post(new_post=new_form.cleaned_data['post_input_text'], user=request.user, date = datetime.datetime.now())
         new_post.save()
 
     # context['posts'] = Post.objects.all().order_by('-date')
@@ -114,8 +114,7 @@ def globalStream_json_serializer(request):
             'new_post': model_item.new_post,
             'user_first_name': model_item.user.first_name,
             'user_last_name': model_item.user.last_name,
-            # 'date': (model_item.date - datetime.timedelta(1)).strftime("%-m/%-d/%Y %-I:%M %p"),
-            'date': model_item.date.strftime("%-m/%-d/%Y %-I:%M %p"),
+            'date': (model_item.date - datetime.timedelta(1)).strftime("%-m/%-d/%Y %-I:%M %p"),
             'user_id': model_item.user.id
         }
         response_data['posts'].append(my_item)
@@ -195,7 +194,7 @@ def add_comment(request):
     parentPOST = get_object_or_404(Post, id=post_id)
 
     # Saving it to the database
-    new_comment = Comment(text=request.POST['item'], user=request.user, date = timezone.now(), post=parentPOST)
+    new_comment = Comment(text=request.POST['item'], user=request.user, date = datetime.datetime.now(), post=parentPOST)
     new_comment.save()
 
     pageToReturn = request.POST['page']
