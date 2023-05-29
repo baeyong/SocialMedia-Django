@@ -76,29 +76,29 @@ def globalStream(request):
     context['first_name'] = request.user.first_name
     context['last_name'] = request.user.last_name
 
-    # renders the other posts
-    if request.method == 'GET':
-        context['posts'] = Post.objects.all().order_by('-date')
-        context['form'] = PostForm()
+    # # renders the other posts
+    # if request.method == 'GET':
+    #     context['posts'] = Post.objects.all().order_by('-date')
+    #     context['form'] = PostForm()
 
-        return render(request, 'global.html', context)
+    #     return render(request, 'global.html', context)
 
-    if 'post_input_text' not in request.POST or not request.POST['post_input_text']:
-        context['posts'] = Post.objects.all().order_by('-date')
-        context['form'] = PostForm()
+    # if 'post_input_text' not in request.POST or not request.POST['post_input_text']:
+    #     context['posts'] = Post.objects.all().order_by('-date')
+    #     context['form'] = PostForm()
 
-        return render(request, 'global.html', context)
+    #     return render(request, 'global.html', context)
 
     
-    new_form = PostForm(request.POST)
-    context['form'] = new_form
+    # new_form = PostForm(request.POST)
+    # context['form'] = new_form
     
-    if new_form.is_valid():
+    # if new_form.is_valid():
 
-        new_post = Post(new_post=new_form.cleaned_data['post_input_text'], user=request.user, date = timezone.now())
-        new_post.save()
+    #     new_post = Post(new_post=new_form.cleaned_data['post_input_text'], user=request.user, date = timezone.now())
+    #     new_post.save()
 
-    context['posts'] = Post.objects.all().order_by('-date')
+    # context['posts'] = Post.objects.all().order_by('-date')
 
     return render(request, 'global.html', context)
 
@@ -212,12 +212,12 @@ def followerStream(request):
     context['first_name'] = request.user.first_name
     context['last_name'] = request.user.last_name
 
-    following = request.user.profile.following.values()
-    id_list = []
-    for v in following:
-        id_list.append(v['id'])
+    # following = request.user.profile.following.values()
+    # id_list = []
+    # for v in following:
+    #     id_list.append(v['id'])
     
-    context['posts']= Post.objects.filter(user_id__in=id_list).order_by('-date')
+    # context['posts']= Post.objects.filter(user_id__in=id_list).order_by('-date')
 
     return render(request, 'followers.html', context)
 
