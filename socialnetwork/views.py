@@ -114,8 +114,7 @@ def globalStream_json_serializer(request):
             'new_post': model_item.new_post,
             'user_first_name': model_item.user.first_name,
             'user_last_name': model_item.user.last_name,
-            # 'date': (model_item.date - datetime.timedelta(1)).strftime("%-m/%-d/%Y %-I:%M %p"),
-            'date': model_item.date.strftime("%-m/%-d/%Y %-I:%M %p"),
+            'date': (model_item.date - datetime.timedelta(1)).strftime("%-m/%-d/%Y %-I:%M %p"),
             'user_id': model_item.user.id
         }
         response_data['posts'].append(my_item)
