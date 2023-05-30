@@ -78,11 +78,11 @@ WSGI_APPLICATION = "socialmedia.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": 'django.db.backends.sqlite3',
+        "ENGINE": 'django.db.backends.mysql',
         "NAME": 'django',
-        # "USER": '',
-        # "PASSWORD": '',
-        # "OPTIONS": {'charset': 'utf8mb4'},
+        "USER": '',
+        "PASSWORD": '',
+        "OPTIONS": {'charset': 'utf8mb4'},
     }
 }
 
