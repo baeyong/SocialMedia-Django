@@ -222,7 +222,7 @@ def followerStream(request):
     return render(request, 'followers.html', context)
 
 
-@login_required(login_url='login')
+# @login_required(login_url='login')
 def myProfile(request, id):
     
     context = {}
