@@ -68,7 +68,7 @@ def register(request):
     return render(request, "register.html", context)
 
 
-@login_required(login_url='login')
+# @login_required(login_url='login')
 def globalStream(request):
     
     context = {}
@@ -204,7 +204,7 @@ def add_comment(request):
     else:
         return followerStream_json_serializer(request)
         
-@login_required(login_url='login')
+# @login_required(login_url='login')
 def followerStream(request):
     
     context = {}
@@ -261,7 +261,7 @@ def myProfile(request, id):
         return render(request, 'myProfile.html', context)
 
 
-@login_required(login_url='login')
+# @login_required(login_url='login')
 def otherProfile(request, id):
     
     context = {}
@@ -289,7 +289,7 @@ def otherProfile(request, id):
     return render(request, 'otherProfile.html', context)
 
 
-@login_required(login_url='login')
+# @login_required(login_url='login')
 def follow(request, id):
     print('following function')
     context = {}
@@ -307,7 +307,7 @@ def follow(request, id):
     return render(request, 'otherProfile.html', context)
 
 
-@login_required(login_url='login')
+# @login_required(login_url='login')
 def unfollow(request, id):
     print('Unfollowing function')
     context = {}
@@ -324,7 +324,7 @@ def unfollow(request, id):
     return render(request, 'otherProfile.html', context)
 
 
-@login_required
+# @login_required
 def get_photo(request, id):
     
     item = get_object_or_404(Profile, user_id=id)
