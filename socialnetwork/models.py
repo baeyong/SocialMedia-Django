@@ -16,7 +16,7 @@ class Post(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.PROTECT)
-    profile_picture = models.FileField(upload_to='socialnetwork/media', blank=True)
+    profile_picture = models.FileField(blank=True)
     bio = models.CharField(max_length=255, blank=True)
     following = models.ManyToManyField(User, related_name='followers')
     content_type = models.CharField(max_length=255, null=True)

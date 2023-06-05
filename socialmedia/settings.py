@@ -132,7 +132,3 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 LOGIN_REDIRECT_URL = 'global'
 
 STATIC_ROOT = BASE_DIR / 'collected_static'
-
-MEDIA_ROOT = '/socialnetwork/media/'
-
-MEDIA_URL = os.path.join(BASE_DIR, '/media/')
