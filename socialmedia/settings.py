@@ -132,4 +132,6 @@ LOGIN_REDIRECT_URL = 'global'
 
 STATIC_ROOT = BASE_DIR / 'collected_static'
 
-SECURE_CROSS_ORIGIN_OPENER_POLICY = None
+MEDIA_ROOT = '/socialnetwork/media/'
+
+MEDIA_URL = os.path.join(BASE_DIR, '/media/')
