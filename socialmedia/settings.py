@@ -135,4 +135,4 @@ STATIC_ROOT = BASE_DIR / 'collected_static'
 
 MEDIA_ROOT = 'socialnetwork/media'
 
-MEDIA_URL = 'media'
+MEDIA_URL = '/media/'
