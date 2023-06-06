@@ -133,6 +133,6 @@ LOGIN_REDIRECT_URL = 'global'
 
 STATIC_ROOT = BASE_DIR / 'collected_static'
 
-MEDIA_ROOT = 'socialnetwork/media'
+MEDIA_ROOT = BASE_DIR / 'socialnetwork/media'
 
 MEDIA_URL = 'media/'
