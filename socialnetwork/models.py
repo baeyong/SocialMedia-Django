@@ -19,7 +19,7 @@ class Profile(models.Model):
     profile_picture = models.FileField(upload_to='socialnetwork/media', blank=True)
     bio = models.CharField(max_length=255, blank=True)
     following = models.ManyToManyField(User, related_name='followers')
-    content_type = models.CharField(max_length=255, null=True)
+    content_type = models.CharField(max_length=50)
 
 class Comment(models.Model):
     text = models.CharField(blank=True, max_length=100)
