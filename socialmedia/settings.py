@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = get_random_secret_key()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -138,8 +138,8 @@ MEDIA_ROOT = BASE_DIR / 'socialnetwork/media'
 MEDIA_URL = 'media/'
 
 # Trying to fix the log out issue
-SESSION_COOKIE_SECURE = False
+# SESSION_COOKIE_SECURE = False
 
-SESSION_COOKIE_AGE = 86400
+# SESSION_COOKIE_AGE = 86400
 
 
