@@ -136,3 +136,8 @@ STATIC_ROOT = BASE_DIR / 'collected_static'
 MEDIA_ROOT = BASE_DIR / 'socialnetwork/media'
 
 MEDIA_URL = 'media/'
+
+# Trying to fix the log out issue
+SESSION_COOKIE_SECURE = False
+
+
