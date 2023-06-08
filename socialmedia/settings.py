@@ -140,4 +140,6 @@ MEDIA_URL = 'media/'
 # Trying to fix the log out issue
 SESSION_COOKIE_SECURE = False
 
+SESSION_COOKIE_AGE = 86400
+
 
